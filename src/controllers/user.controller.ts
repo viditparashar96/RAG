@@ -1,9 +1,8 @@
-import { PrismaClient, User } from "@prisma/client";
+import { User } from "@prisma/client";
 import bcrypt from "bcryptjs";
 import { Request, Response } from "express";
 import jwt from "jsonwebtoken";
-
-const prisma = new PrismaClient();
+import prisma from "../config/dbclient";
 
 interface AuthenticatedRequest extends Request {
   user?: User;

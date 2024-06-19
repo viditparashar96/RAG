@@ -1,8 +1,7 @@
-import { PrismaClient } from "@prisma/client";
+import prisma from "../config/dbclient";
 import { chatWithPdf } from "../helpers/chat-with-pdf";
 import addpdfworker, { add_pdf_queue } from "../helpers/workers/add-pdf.worker";
 import { getChatHistory, saveChatMessage } from "../libs/utils";
-const prisma = new PrismaClient();
 export const createProject = async (req: any, res: any) => {
   try {
     const { name, description } = req.body;
